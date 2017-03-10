@@ -14,31 +14,55 @@ namespace RPGGameSE22.Classes
     {
         private int mapWidth;
         private int mapHeight;
-        private PictureBox[] floortilesX;
-        private PictureBox[] floortilesY;
+        private PictureBox[] floortiles;
+        ResourceManager rm = Resources.ResourceManager;
+        private Form1 form;
+        private Endgoal endgoal;
 
-        public Level(int mapWidth, int mapHeight)
+        public Level(int mapWidth, int mapHeight, Form1 form)
         {
             this.mapWidth = mapWidth;
             this.mapHeight = mapHeight;
+            this.form = form;
 
-            CreateEndGoal(new Point(mapWidth, mapHeight));
+            CreateEndGoal();
             CreatePowerup(new Point(mapHeight, mapHeight));
+            floortiles = new PictureBox[mapWidth*mapHeight];
+            GenerateMap();
         }
 
         private void GenerateMap()
         {
-            
+            Console.WriteLine("Drawmap");
+            for (int i = 0; i < mapHeight; i++)
+            {
+                for (int j = 0; j < mapWidth; j++)
+                {
+                    floortiles[j] = new PictureBox();
+                    floortiles[j].Image = Resources.floortile;
+                    floortiles[j].Visible = true;
+                    floortiles[j].Width = 75;
+                    floortiles[j].Height = 75;
+                    floortiles[j].Location = new Point(75*j, 75*i);
+                    floortiles[j].SizeMode = PictureBoxSizeMode.StretchImage;
+                    form.Controls.Add(floortiles[j]);
+                }
+            }
         }
 
-        private void CreateEndGoal(Point loc)
+        private void CreateEndGoal()
         {
-            Powerup powerpup = new Powerup(loc);
+            Random r = new Random();
+            int x = r.Next(0, mapWidth*75);
+            int y = r.Next(0, mapHeight*75);
+
+            endgoal = new Endgoal(new Point(x,y), form);
         }
 
         private void CreatePowerup(Point loc)
         {
-            Endgoal endgoal = new Endgoal(loc);
+
+            Powerup powerpup = new Powerup(loc);
         }
     }
 }

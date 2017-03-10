@@ -13,10 +13,16 @@ namespace RPGGameSE22
 {
     public partial class Form1 : Form
     {
+        private World world;
         public Form1()
         {
             InitializeComponent();
-            World world = new World();
+            world = new World(this);
+        }
+
+        private void UpdateTimer_Tick(object sender, EventArgs e)
+        {
+            world.Update();
         }
     }
 }

@@ -28,13 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.UpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // UpdateTimer
+            // 
+            this.UpdateTimer.Interval = 17;
+            this.UpdateTimer.Tick += new System.EventHandler(this.UpdateTimer_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 552);
+            this.ClientSize = new System.Drawing.Size(814, 770);
             this.Name = "Form1";
             this.Text = "Arupegee";
             this.ResumeLayout(false);
@@ -42,6 +49,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer UpdateTimer;
     }
 }
 

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace RPGGameSE22.Classes
 {
@@ -12,27 +13,30 @@ namespace RPGGameSE22.Classes
         private bool isPaused = false;
         List<Enemy> enemyList = new List<Enemy>();
         List<Level> levelList = new List<Level>();
+        private Form1 form;
 
 
-        public World()
+        public World(Form1 form)
         {
-            CreateLevel(50,50);
+            this.form = form;
+            CreateLevel(10,10);
         }
 
         public void Update()
         {
-            
+
         }
 
         private void CreateLevel(int width, int height)
         {
-            Level level = new Level(width, height);
+            Level level = new Level(width, height, form);
             levelList.Add(level);
+            AddPlayer(50,50);
         }
 
         private void AddPlayer(int x, int y)
         {
-            Player player = new Player(new Point(x,y), 50);
+            Player player = new Player(new Point(x,y), 50, form);
         }
 
         private void AddEnemy(int x, int y)
