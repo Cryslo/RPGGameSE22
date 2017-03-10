@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RPGGameSE22.Classes;
 
 namespace RPGGameSE22
 {
@@ -15,6 +16,7 @@ namespace RPGGameSE22
         public Form1()
         {
             InitializeComponent();
+            World world = new World();
         }
     }
 }
