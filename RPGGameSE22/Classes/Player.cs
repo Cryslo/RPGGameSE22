@@ -31,7 +31,6 @@ namespace RPGGameSE22.Classes
             playerSprite.BackColor = Color.Transparent;
             form.Controls.Add(playerSprite);
             playerSprite.BringToFront();
-            //test
         }
 
         public string Direction
