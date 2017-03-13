@@ -23,6 +23,7 @@ namespace RPGGameSE22
         private void UpdateTimer_Tick(object sender, EventArgs e)
         {
             world.Update();
+            Console.WriteLine("tick");
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace RPGGameSE22.Classes
 {
@@ -11,11 +12,13 @@ namespace RPGGameSE22.Classes
     {
         private Point location;
         private int health;
+        private PictureBox sprite;
 
-        public Character(Point location, int health)
+        public Character(Point location, int health, PictureBox sprite)
         {
             this.location = location;
             this.health = health;
+            this.sprite = sprite;
         }
 
         public Point Location

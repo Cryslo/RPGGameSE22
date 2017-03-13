@@ -12,12 +12,13 @@ namespace RPGGameSE22.Classes
     class Player : Character
     {
         private string direction = "right";
-        private PictureBox playerSprite = new PictureBox();
+        private PictureBox playerSprite;
         private Form1 form;
 
-        public Player(Point location, int health, Form1 form) : base (location, health)
+        public Player(Point location, int health, Form1 form, PictureBox sprite) : base (location, health, sprite)
         {
             this.form = form;
+            playerSprite = sprite;
             CreateSprite();
         }
 

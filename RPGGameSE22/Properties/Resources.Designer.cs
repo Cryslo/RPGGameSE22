@@ -63,6 +63,16 @@ namespace RPGGameSE22.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ahriman_398 {
+            get {
+                object obj = ResourceManager.GetObject("Ahriman_398", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap character {
             get {
                 object obj = ResourceManager.GetObject("character", resourceCulture);

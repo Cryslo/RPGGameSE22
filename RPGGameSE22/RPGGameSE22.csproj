@@ -94,6 +94,7 @@
     <None Include="Resources\floortile.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Ahriman_398.png" />
     <Content Include="Resources\chest.gif" />
     <Content Include="Resources\character.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
