@@ -9,19 +9,15 @@ using RPGGameSE22.Properties;
 
 namespace RPGGameSE22.Classes
 {
-    class Enemy : Character
+    public class Enemy : Character
     {
         private string direction = "left";
-        private PictureBox sprite;
-        private Form1 form;
         private float directionTimer = 0;
         private int rnmbr;
         private Random random;
 
-        public Enemy(Point location, int health, PictureBox sprite, Form1 form, Random random) : base (location, health, sprite)
+        public Enemy(Point location, int health, PictureBox sprite, Form1 form, Random random) : base (location, health, sprite, form)
         {
-            this.sprite = sprite;
-            this.form = form;
             this.random = random;
             CreateSprite();
         }
@@ -34,14 +30,14 @@ namespace RPGGameSE22.Classes
 
         private void CreateSprite()
         {
-            sprite.Image = Resources.Ahriman_398;
-            sprite.Location = Location;
-            sprite.Width = 50;
-            sprite.Height = 50;
-            sprite.SizeMode = PictureBoxSizeMode.StretchImage;
-            sprite.BackColor = Color.Transparent;
-            form.Controls.Add(sprite);
-            sprite.BringToFront();
+            Sprite.Image = Resources.Ahriman_398;
+            Sprite.Location = Location;
+            Sprite.Width = 50;
+            Sprite.Height = 50;
+            Sprite.SizeMode = PictureBoxSizeMode.StretchImage;
+            Sprite.BackColor = Color.Transparent;
+            Form2.Controls.Add(Sprite);
+            Sprite.BringToFront();
         }
 
         public void RandomMovement()
@@ -52,38 +48,38 @@ namespace RPGGameSE22.Classes
                 rnmbr = random.Next(0, 4);
                 directionTimer = 0;
             }
-            if (sprite.Location.X < 10)
+            if (Sprite.Location.X < 10)
             {
                 rnmbr = 1;
             }
-            if (sprite.Location.X > form.Width)
+            if (Sprite.Location.X > Form2.Width)
             {
                 rnmbr = 0;
             }
-            if (sprite.Location.Y > form.Height)
+            if (Sprite.Location.Y > Form2.Height)
             {
                 rnmbr = 3;
             }
-            if (sprite.Location.Y < 10)
+            if (Sprite.Location.Y < 10)
             {
                 rnmbr = 2;
             }
 
             if (rnmbr == 0)
             {
-                sprite.Location = new Point(sprite.Location.X - 5, sprite.Location.Y);
+                Sprite.Location = new Point(Sprite.Location.X - 5, Sprite.Location.Y);
             }
             if (rnmbr == 1)
             {
-                sprite.Location = new Point(sprite.Location.X + 5, sprite.Location.Y);
+                Sprite.Location = new Point(Sprite.Location.X + 5, Sprite.Location.Y);
             }
             if (rnmbr == 2)
             {
-                sprite.Location = new Point(sprite.Location.X, sprite.Location.Y + 5);
+                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y + 5);
             }
             if (rnmbr == 3)
             {
-                sprite.Location = new Point(sprite.Location.X, sprite.Location.Y - 5);
+                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y - 5);
             }
         }
 

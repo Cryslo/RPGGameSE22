@@ -10,7 +10,7 @@ using RPGGameSE22.Properties;
 
 namespace RPGGameSE22.Classes
 {
-    class Level
+    public class Level
     {
         private int mapWidth;
         private int mapHeight;
@@ -29,6 +29,30 @@ namespace RPGGameSE22.Classes
             CreatePowerup(new Point(mapHeight, mapHeight));
             floortiles = new PictureBox[mapWidth*mapHeight];
             GenerateMap();
+        }
+
+        public int MapWidth
+        {
+            get { return mapWidth; }
+            set { mapWidth = value; }
+        }
+
+        public int MapHeight
+        {
+            get { return mapHeight; }
+            set { mapHeight = value; }
+        }
+
+        public PictureBox[] Floortiles
+        {
+            get { return floortiles; }
+            set { floortiles = value; }
+        }
+
+        public Form1 Form2
+        {
+            get { return form; }
+            set { form = value; }
         }
 
         private void GenerateMap()

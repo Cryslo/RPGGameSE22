@@ -9,29 +9,26 @@ using RPGGameSE22.Properties;
 
 namespace RPGGameSE22.Classes
 {
-    class Player : Character
+    public class Player : Character
     {
         private string direction = "right";
-        private PictureBox playerSprite;
-        private Form1 form;
 
-        public Player(Point location, int health, Form1 form, PictureBox sprite) : base (location, health, sprite)
+        public Player(Point location, int health, Form1 form, PictureBox sprite) : base (location, health, sprite, form)
         {
-            this.form = form;
-            playerSprite = sprite;
             CreateSprite();
         }
 
         private void CreateSprite()
         {
-            playerSprite.Image = Resources.character;
-            playerSprite.Location = Location;
-            playerSprite.Width = 50;
-            playerSprite.Height = 50;
-            playerSprite.SizeMode = PictureBoxSizeMode.StretchImage;
-            playerSprite.BackColor = Color.Transparent;
-            form.Controls.Add(playerSprite);
-            playerSprite.BringToFront();
+
+            Sprite.Image = Resources.character;
+            Sprite.Location = Location;
+            Sprite.Width = 50;
+            Sprite.Height = 50;
+            Sprite.SizeMode = PictureBoxSizeMode.StretchImage;
+            Sprite.BackColor = Color.Transparent;
+            Form2.Controls.Add(Sprite);
+            Sprite.BringToFront();
         }
 
         public string Direction
@@ -44,19 +41,19 @@ namespace RPGGameSE22.Classes
         {
             if (direction == "left")
             {
-                playerSprite.Location = new Point(playerSprite.Location.X + 5, playerSprite.Location.Y);
+                Sprite.Location = new Point(Sprite.Location.X + 5, Sprite.Location.Y);
             }
             if (direction == "right")
             {
-                playerSprite.Location = new Point(playerSprite.Location.X - 5, playerSprite.Location.Y);
+                Sprite.Location = new Point(Sprite.Location.X - 5, Sprite.Location.Y);
             }
             if (direction == "up")
             {
-                playerSprite.Location = new Point(playerSprite.Location.X, playerSprite.Location.Y + 5);
+                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y + 5);
             }
             if (direction == "down")
             {
-                playerSprite.Location = new Point(playerSprite.Location.X, playerSprite.Location.Y - 5);
+                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y - 5);
             }
         }
     }
