@@ -12,7 +12,7 @@ namespace RPGGameSE22.Classes
     public class Endgoal : WorldObject
     {
         private PictureBox goalimage;
-        public Endgoal(Point location, Form1 form) : base (location, form)
+        public Endgoal(Point location, Form1 form, bool isPickedup) : base (location, form, isPickedup)
         {
             CreateGoal(location, form);
         }

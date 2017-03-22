@@ -79,12 +79,12 @@ namespace RPGGameSE22.Classes
         private void CreateEndGoal(int x, int y)
         {
 
-            endgoal = new Endgoal(new Point(x,y), form);
+            endgoal = new Endgoal(new Point(x,y), form, false);
         }
 
         private void CreatePowerup(int x, int y)
         {
-            powerup = new Powerup(new Point(x,y), form);
+            powerup = new Powerup(new Point(x,y), form, false);
         }
     }
 }

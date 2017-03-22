@@ -14,7 +14,7 @@ namespace RPGGameSE22.Classes
         private PictureBox goalimage;
         private Rectangle intersectangle;
 
-        public Powerup(Point location, Form1 form) : base (location, form)
+        public Powerup(Point location, Form1 form, bool isPickedup) : base (location, form, isPickedup)
         {
             SpawnPowerup(location, form);
         }
