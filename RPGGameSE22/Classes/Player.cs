@@ -12,6 +12,7 @@ namespace RPGGameSE22.Classes
     public class Player : Character
     {
         private string direction = "right";
+        
 
         public Player(Point location, int health, Form1 form, PictureBox sprite) : base (location, health, sprite, form)
         {

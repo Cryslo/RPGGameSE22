@@ -14,7 +14,7 @@ namespace RPGGameSE22.Classes
     {
         private int mapWidth;
         private int mapHeight;
-        private PictureBox[] floortiles;
+        private PictureBox[,] floortiles;
         ResourceManager rm = Resources.ResourceManager;
         private Form1 form;
         private Endgoal endgoal;
@@ -27,7 +27,6 @@ namespace RPGGameSE22.Classes
 
             CreateEndGoal();
             CreatePowerup(new Point(mapHeight, mapHeight));
-            floortiles = new PictureBox[mapWidth*mapHeight];
             GenerateMap();
         }
 
@@ -43,7 +42,7 @@ namespace RPGGameSE22.Classes
             set { mapHeight = value; }
         }
 
-        public PictureBox[] Floortiles
+        public PictureBox[,] Floortiles
         {
             get { return floortiles; }
             set { floortiles = value; }
@@ -57,19 +56,20 @@ namespace RPGGameSE22.Classes
 
         private void GenerateMap()
         {
+            floortiles = new PictureBox[mapWidth, mapHeight];
             Console.WriteLine("Drawmap");
             for (int i = 0; i < mapHeight; i++)
             {
                 for (int j = 0; j < mapWidth; j++)
                 {
-                    floortiles[j] = new PictureBox();
-                    floortiles[j].Image = Resources.floortile;
-                    floortiles[j].Visible = true;
-                    floortiles[j].Width = 75;
-                    floortiles[j].Height = 75;
-                    floortiles[j].Location = new Point(75*j, 75*i);
-                    floortiles[j].SizeMode = PictureBoxSizeMode.StretchImage;
-                    form.Controls.Add(floortiles[j]);
+                    floortiles[i,j] = new PictureBox();
+                    floortiles[i,j].Image = Resources.floortile;
+                    floortiles[i,j].Visible = true;
+                    floortiles[i, j].Width = 75;
+                    floortiles[i, j].Height = 75;
+                    floortiles[i, j].Location = new Point(75*j, 75*i);
+                    floortiles[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
+                    form.Controls.Add(floortiles[i, j]);
                 }
             }
         }
