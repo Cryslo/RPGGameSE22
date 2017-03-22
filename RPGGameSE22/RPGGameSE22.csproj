@@ -49,6 +49,7 @@
     <Compile Include="Classes\Character.cs" />
     <Compile Include="Classes\Endgoal.cs" />
     <Compile Include="Classes\Enemy.cs" />
+    <Compile Include="Classes\IPickupable.cs" />
     <Compile Include="Classes\Level.cs" />
     <Compile Include="Classes\Player.cs" />
     <Compile Include="Classes\Powerup.cs" />

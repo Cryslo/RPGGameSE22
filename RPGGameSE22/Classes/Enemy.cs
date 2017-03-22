@@ -28,7 +28,7 @@ namespace RPGGameSE22.Classes
             set { direction = value; }
         }
 
-        private void CreateSprite()
+        public override void CreateSprite()
         {
             Sprite.Image = Resources.Ahriman_398;
             Sprite.Location = Location;

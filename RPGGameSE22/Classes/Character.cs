@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RPGGameSE22.Properties;
 
 namespace RPGGameSE22.Classes
 {
-    public class Character
+    public abstract class Character
     {
         private Point location;
         private int health;
@@ -22,6 +23,8 @@ namespace RPGGameSE22.Classes
             this.sprite = sprite;
             this.form = form;
         }
+
+        public abstract void CreateSprite();
 
         public Point Location
         {

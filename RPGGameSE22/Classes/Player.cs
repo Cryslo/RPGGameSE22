@@ -19,9 +19,8 @@ namespace RPGGameSE22.Classes
             CreateSprite();
         }
 
-        private void CreateSprite()
+        public override void CreateSprite()
         {
-
             Sprite.Image = Resources.character;
             Sprite.Location = Location;
             Sprite.Width = 50;

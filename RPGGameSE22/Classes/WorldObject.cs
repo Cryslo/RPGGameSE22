@@ -8,16 +8,21 @@ using System.Windows.Forms;
 
 namespace RPGGameSE22.Classes
 {
-    public class WorldObject
+    public class WorldObject : IPickupable
     {
         private Point location;
         private PictureBox goalimage;
         private Form1 form;
-        public WorldObject(Point location, Form1 form)
+        private bool _isPickedup;
+
+        public WorldObject(Point location, Form1 form, bool isPickedup)
         {
             this.location = location;
             this.form = form;
+            this._isPickedup = isPickedup;
         }
+
+        public bool isPickedup { get { return _isPickedup; } set { _isPickedup = value; } }
 
         public Point Location
         {
@@ -27,6 +32,11 @@ namespace RPGGameSE22.Classes
         public Form1 Form2
         {
             get { return form; }
+        }
+
+        public void pickUpInteraction()
+        {
+            
         }
     }
 }
