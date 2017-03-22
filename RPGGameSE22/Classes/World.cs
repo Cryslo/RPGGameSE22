@@ -34,7 +34,10 @@ namespace RPGGameSE22.Classes
             {
                 enemy.RandomMovement();
             }
-
+            if (levelList[0].powerup.Intersectangle.IntersectsWith(player.Sprite.Bounds))
+            {
+                levelList[0].powerup.Goalimage.Location = new Point(-500, -500);
+            }
             //Move the player with the given key input
             player.MovePlayer(keypressed);
         }
@@ -43,20 +46,22 @@ namespace RPGGameSE22.Classes
         {
             Level level = new Level(width, height, form);
             levelList.Add(level);
-            AddPlayer(50,50);
-            AddEnemy(250,250);
-            AddEnemy(100, 250);
+            AddItem(50,50,"player");
+            AddItem(250,250,"enemy");
+            AddItem(100,250,"enemy");
         }
 
-        private void AddPlayer(int x, int y)
+        private void AddItem(int x, int y, string type)
         {
-            player = new Player(new Point(x,y), 50, form, new PictureBox());
-        }
-
-        private void AddEnemy(int x, int y)
-        {
-            Enemy enemy = new Enemy(new Point(x, y), 50, new PictureBox(), form, random);
-            enemyList.Add(enemy);
+            if (type == "enemy")
+            {
+                Enemy enemy = new Enemy(new Point(x, y), 50, new PictureBox(), form, random);
+                enemyList.Add(enemy);
+            }
+            else if (type == "player")
+            {
+                player = new Player(new Point(x, y), 50, form, new PictureBox());
+            }
         }
     }
 }

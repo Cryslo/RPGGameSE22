@@ -9,19 +9,15 @@ using RPGGameSE22.Properties;
 
 namespace RPGGameSE22.Classes
 {
-    class Endgoal
+    public class Endgoal : WorldObject
     {
-        private Point location;
         private PictureBox goalimage;
-        private Form1 form;
-        public Endgoal(Point location, Form1 form)
+        public Endgoal(Point location, Form1 form) : base (location, form)
         {
-            this.form = form;
-            this.location = location;
-            CreateGoal();
+            CreateGoal(location, form);
         }
 
-        private void CreateGoal()
+        private void CreateGoal(Point location, Form1 form)
         {
             goalimage = new PictureBox();
             goalimage.Image = Resources.chest;

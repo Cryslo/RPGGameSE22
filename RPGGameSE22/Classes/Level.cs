@@ -18,6 +18,7 @@ namespace RPGGameSE22.Classes
         ResourceManager rm = Resources.ResourceManager;
         private Form1 form;
         private Endgoal endgoal;
+        public Powerup powerup;
 
         public Level(int mapWidth, int mapHeight, Form1 form)
         {
@@ -25,8 +26,9 @@ namespace RPGGameSE22.Classes
             this.mapHeight = mapHeight;
             this.form = form;
 
-            CreateEndGoal();
-            CreatePowerup(new Point(mapHeight, mapHeight));
+            Random r = new Random();
+            CreateEndGoal(r.Next(0, mapWidth * 75), r.Next(0, mapHeight * 75));
+            CreatePowerup(r.Next(0, mapWidth * 75), r.Next(0, mapHeight * 75));
             GenerateMap();
         }
 
@@ -74,19 +76,15 @@ namespace RPGGameSE22.Classes
             }
         }
 
-        private void CreateEndGoal()
+        private void CreateEndGoal(int x, int y)
         {
-            Random r = new Random();
-            int x = r.Next(0, mapWidth*75);
-            int y = r.Next(0, mapHeight*75);
 
             endgoal = new Endgoal(new Point(x,y), form);
         }
 
-        private void CreatePowerup(Point loc)
+        private void CreatePowerup(int x, int y)
         {
-
-            Powerup powerpup = new Powerup(loc);
+            powerup = new Powerup(new Point(x,y), form);
         }
     }
 }
