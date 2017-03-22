@@ -42,19 +42,19 @@ namespace RPGGameSE22.Classes
         {
             if (direction == "left")
             {
-                Sprite.Location = new Point(Sprite.Location.X + 5, Sprite.Location.Y);
+                Sprite.Location = new Point(Sprite.Location.X - 5, Sprite.Location.Y);
             }
             if (direction == "right")
             {
-                Sprite.Location = new Point(Sprite.Location.X - 5, Sprite.Location.Y);
+                Sprite.Location = new Point(Sprite.Location.X + 5, Sprite.Location.Y);
             }
             if (direction == "up")
             {
-                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y + 5);
+                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y - 5);
             }
             if (direction == "down")
             {
-                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y - 5);
+                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y + 5);
             }
         }
     }

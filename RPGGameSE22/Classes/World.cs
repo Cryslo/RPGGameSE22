@@ -15,6 +15,8 @@ namespace RPGGameSE22.Classes
         List<Level> levelList = new List<Level>();
         private Form1 form;
         Random random = new Random();
+        private Player player;
+        private string keyPressed = "";
 
 
         public World(Form1 form)
@@ -25,12 +27,16 @@ namespace RPGGameSE22.Classes
             CreateLevel(10, 10);
         }
 
-        public void Update()
+        public void Update(string keypressed)
         {
+            this.keyPressed = keypressed;
             foreach (Enemy enemy in enemyList)
             {
                 enemy.RandomMovement();
             }
+
+            //Move the player with the given key input
+            player.MovePlayer(keypressed);
         }
 
         private void CreateLevel(int width, int height)
@@ -44,7 +50,7 @@ namespace RPGGameSE22.Classes
 
         private void AddPlayer(int x, int y)
         {
-            Player player = new Player(new Point(x,y), 50, form, new PictureBox());
+            player = new Player(new Point(x,y), 50, form, new PictureBox());
         }
 
         private void AddEnemy(int x, int y)

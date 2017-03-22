@@ -45,6 +45,8 @@
             this.ClientSize = new System.Drawing.Size(336, 231);
             this.Name = "Form1";
             this.Text = "Arupegee";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.ResumeLayout(false);
 
         }

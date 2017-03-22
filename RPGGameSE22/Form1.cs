@@ -14,6 +14,7 @@ namespace RPGGameSE22
     public partial class Form1 : Form
     {
         private World world;
+        private string keyPressed = "";
         public Form1()
         {
             InitializeComponent();
@@ -22,8 +23,35 @@ namespace RPGGameSE22
 
         private void UpdateTimer_Tick(object sender, EventArgs e)
         {
-            world.Update();
-            Console.WriteLine("tick");
+            world.Update(keyPressed);
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.A)
+            {
+                keyPressed = "left";
+            }
+            else if (e.KeyCode == Keys.D)
+            {
+                keyPressed = "right";
+            }
+            else if (e.KeyCode == Keys.W)
+            {
+                keyPressed = "up";
+            }
+            else if (e.KeyCode == Keys.S)
+            {
+                keyPressed = "down";
+            }
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.A || e.KeyCode == Keys.D || e.KeyCode == Keys.W || e.KeyCode == Keys.S)
+            {
+                keyPressed = "";
+            }
         }
     }
 }
