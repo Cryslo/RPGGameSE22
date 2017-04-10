@@ -14,7 +14,7 @@ namespace RPGGameSE22.Classes
 
         public static string GetLineFromText()
         {
-            string item = Directory.GetCurrentDirectory() + "//test.txt";
+            string item = Directory.GetCurrentDirectory() + "//Resources//test.txt";
             if (!File.Exists(item))
             {
                 try
