@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGGameSE22.Database
+namespace Models.Database
 {
-    interface IRPGContext
+    public interface IRPGContext
     {
 
         List<string> GetAllCharacters();

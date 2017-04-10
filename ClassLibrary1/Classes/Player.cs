@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RPGGameSE22.Properties;
-using Models.Database;
 
 namespace RPGGameSE22.Classes
 {
@@ -15,14 +14,11 @@ namespace RPGGameSE22.Classes
     {
         private string direction = "right";
         private Level level;
-        public string name;
-        public RPGRepository rpgrepo;
-
+        
 
         public Player(Point location, int health, Form1 form, PictureBox sprite, Level level) : base (location, health, sprite, form)
         {
             CreateSprite();
-            SetPlayerName();
             this.level = level;
         }
 
@@ -36,15 +32,6 @@ namespace RPGGameSE22.Classes
             Sprite.BackColor = Color.Transparent;
             Form2.Controls.Add(Sprite);
             Sprite.BringToFront();
-        }
-
-        public void SetPlayerName()
-        {
-            RPGMemoryContext rpgmemctx = new RPGMemoryContext();
-            rpgrepo = new RPGRepository(rpgmemctx);
-            List<string> namelist =  rpgrepo.GetAllCharacters();
-            Random r = new Random();
-            name = namelist[r.Next(0, 3)];
         }
 
         public string Direction

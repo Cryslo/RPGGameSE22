@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPGGameSE22", "RPGGameSE22\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPGUnitTestProject", "RPGUnitTestProject\RPGUnitTestProject.csproj", "{D3392F17-F815-418F-8F73-035F6CE8C9FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{11ABCD0A-BB09-433C-B316-5CDF06758FD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D3392F17-F815-418F-8F73-035F6CE8C9FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3392F17-F815-418F-8F73-035F6CE8C9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3392F17-F815-418F-8F73-035F6CE8C9FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11ABCD0A-BB09-433C-B316-5CDF06758FD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11ABCD0A-BB09-433C-B316-5CDF06758FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11ABCD0A-BB09-433C-B316-5CDF06758FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11ABCD0A-BB09-433C-B316-5CDF06758FD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

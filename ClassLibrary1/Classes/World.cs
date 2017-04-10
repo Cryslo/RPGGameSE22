@@ -28,7 +28,6 @@ namespace RPGGameSE22.Classes
             form.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             form.AutoSize = true;
             CreateLevel(10, 10);
-            MessageBox.Show("Your name is: " + player.name);
         }
 
         public void Update(string keypressed)

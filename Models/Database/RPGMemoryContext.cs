@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGGameSE22.Database
+namespace Models.Database
 {
-    class RPGMemoryContext
+    public class RPGMemoryContext : IRPGContext
     {
         private List<string> nameList = new List<string>();
 

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGGameSE22.Database
+namespace Models.Database
 {
-    class RPGRepository
+    public class RPGRepository
     {
         private IRPGContext context;
 

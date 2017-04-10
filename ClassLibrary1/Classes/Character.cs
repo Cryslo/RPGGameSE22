@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RPGGameSE22.Properties;
-using Models.Database;
 
 namespace RPGGameSE22.Classes
 {
@@ -16,7 +15,6 @@ namespace RPGGameSE22.Classes
         private int health;
         private PictureBox sprite;
         private Form1 form;
-        
 
         public Character(Point location, int health, PictureBox sprite, Form1 form)
         {

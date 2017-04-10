@@ -19,11 +19,15 @@ namespace RPGGameSE22
         {
             InitializeComponent();
             world = new World(this);
+
         }
 
         private void UpdateTimer_Tick(object sender, EventArgs e)
         {
-            world.Update(keyPressed);
+            if (world != null)
+            {
+                world.Update(keyPressed);
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
