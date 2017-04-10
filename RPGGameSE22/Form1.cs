@@ -23,7 +23,7 @@ namespace RPGGameSE22
 
         private void UpdateTimer_Tick(object sender, EventArgs e)
         {
-            //world.Update(keyPressed);
+            world.Update(keyPressed);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
