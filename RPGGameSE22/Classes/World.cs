@@ -13,10 +13,13 @@ namespace RPGGameSE22.Classes
         private bool isPaused = false;
         List<Enemy> enemyList = new List<Enemy>();
         List<Level> levelList = new List<Level>();
+        private Level level;
         private Form1 form;
         Random random = new Random();
+
         private Player player;
         private string keyPressed = "";
+        private int keyPressedTimer = 0;
 
 
         public World(Form1 form)
@@ -34,17 +37,36 @@ namespace RPGGameSE22.Classes
             {
                 enemy.RandomMovement();
             }
-            if (levelList[0].powerup.Intersectangle.IntersectsWith(player.Sprite.Bounds))
+            if (levelList[0].powerup != null)
             {
-                levelList[0].powerup.Goalimage.Location = new Point(-500, -500);
+                if (levelList[0].powerup.Intersectangle.IntersectsWith(player.Sprite.Bounds))
+                {
+                    levelList[0].powerup.RemovePowerup(form);
+                    levelList[0].powerup = null;
+                    this.keyPressed = "";
+                    MessageBox.Show(FileAccess.GetLineFromText());
+                }
             }
             //Move the player with the given key input
-            player.MovePlayer(keypressed);
+            if (keyPressedTimer == 0)
+            {
+                player.MovePlayer(keypressed);
+                keyPressedTimer = 1;
+            }
+            if (keyPressedTimer > 0)
+            {
+                keyPressedTimer += 1;
+                if (keyPressedTimer > 5)
+                {
+                    keyPressedTimer = 0;
+                }
+            }
+
         }
 
         private void CreateLevel(int width, int height)
         {
-            Level level = new Level(width, height, form);
+            level = new Level(width, height, form);
             levelList.Add(level);
             AddItem(50,50,"player");
             AddItem(250,250,"enemy");
@@ -60,7 +82,7 @@ namespace RPGGameSE22.Classes
             }
             else if (type == "player")
             {
-                player = new Player(new Point(x, y), 50, form, new PictureBox());
+                player = new Player(new Point(x, y), 50, form, new PictureBox(), level);
             }
         }
     }

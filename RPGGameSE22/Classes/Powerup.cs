@@ -43,6 +43,11 @@ namespace RPGGameSE22.Classes
             goalimage.BringToFront();
         }
 
+        public void RemovePowerup(Form1 form)
+        {
+            form.Controls.Remove(goalimage);
+        }
+
         private void GiveBonusPlayer()
         {
             

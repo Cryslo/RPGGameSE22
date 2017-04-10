@@ -43,7 +43,7 @@ namespace RPGGameSE22.Classes
         public void RandomMovement()
         {
             directionTimer++;
-            if (directionTimer >= 10)
+            if (directionTimer >= 50)
             {
                 rnmbr = random.Next(0, 4);
                 directionTimer = 0;
@@ -67,20 +67,25 @@ namespace RPGGameSE22.Classes
 
             if (rnmbr == 0)
             {
-                Sprite.Location = new Point(Sprite.Location.X - 5, Sprite.Location.Y);
+                Sprite.Location = new Point(Sprite.Location.X - 50, Sprite.Location.Y);
+                rnmbr = 5;
             }
-            if (rnmbr == 1)
+            else if (rnmbr == 1)
             {
-                Sprite.Location = new Point(Sprite.Location.X + 5, Sprite.Location.Y);
+                Sprite.Location = new Point(Sprite.Location.X + 50, Sprite.Location.Y);
+                rnmbr = 5;
             }
-            if (rnmbr == 2)
+            else if (rnmbr == 2)
             {
-                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y + 5);
+                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y + 50);
+                rnmbr = 5;
             }
-            if (rnmbr == 3)
+            else if (rnmbr == 3)
             {
-                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y - 5);
+                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y - 50);
+                rnmbr = 5;
             }
+
         }
 
         private void AttackPlayer(Player player)

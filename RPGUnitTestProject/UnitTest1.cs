@@ -15,7 +15,7 @@ namespace RPGGameSE22
             Player player = new Player(new Point(50,50), 50, new Form1(), new PictureBox());
             Assert.AreEqual(new Point(50,50), player.Location, "location is incorrect");
             Assert.AreEqual(50, player.Health, "Health is incorrect");
-            Assert.IsNotNull(player.PlayerSprite, "sprite is incorrect");
+            Assert.IsNotNull(player.Sprite, "sprite is incorrect");
 
             Random r = new Random();
             Enemy enemy = new Enemy(new Point(50, 50), 50, new PictureBox(), new Form1(), r);

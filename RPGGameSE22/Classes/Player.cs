@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,11 +13,13 @@ namespace RPGGameSE22.Classes
     public class Player : Character
     {
         private string direction = "right";
+        private Level level;
         
 
-        public Player(Point location, int health, Form1 form, PictureBox sprite) : base (location, health, sprite, form)
+        public Player(Point location, int health, Form1 form, PictureBox sprite, Level level) : base (location, health, sprite, form)
         {
             CreateSprite();
+            this.level = level;
         }
 
         public override void CreateSprite()
@@ -41,19 +44,19 @@ namespace RPGGameSE22.Classes
         {
             if (direction == "left")
             {
-                Sprite.Location = new Point(Sprite.Location.X - 5, Sprite.Location.Y);
+                Sprite.Location = new Point(Sprite.Location.X - 50, Sprite.Location.Y);
             }
             if (direction == "right")
             {
-                Sprite.Location = new Point(Sprite.Location.X + 5, Sprite.Location.Y);
+                Sprite.Location = new Point(Sprite.Location.X + 50, Sprite.Location.Y);
             }
             if (direction == "up")
             {
-                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y - 5);
+                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y - 50);
             }
             if (direction == "down")
             {
-                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y + 5);
+                Sprite.Location = new Point(Sprite.Location.X, Sprite.Location.Y + 50);
             }
         }
     }

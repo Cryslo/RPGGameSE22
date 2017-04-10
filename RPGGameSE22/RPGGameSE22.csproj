@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\FileAccess.cs" />
     <Compile Include="Classes\Character.cs" />
     <Compile Include="Classes\Endgoal.cs" />
     <Compile Include="Classes\Enemy.cs" />
@@ -55,6 +56,9 @@
     <Compile Include="Classes\Powerup.cs" />
     <Compile Include="Classes\World.cs" />
     <Compile Include="Classes\WorldObject.cs" />
+    <Compile Include="Database\IRPGContext.cs" />
+    <Compile Include="Database\RPGMemoryContext.cs" />
+    <Compile Include="Database\RPGRepository.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +100,7 @@
     <None Include="Resources\floortile.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\96F_giant_test2.jpg" />
     <Content Include="Resources\Ahriman_398.png" />
     <Content Include="Resources\chest.gif" />
     <Content Include="Resources\character.png">
